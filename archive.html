@@ -29,10 +29,12 @@
         <li><a href="./yappings/Whole_blog_system_within_90_lines_of_code.html">Whole blog system within 90 lines of code.html</a> —— 2025-11-27 </li>
     </ul>
     </main>
-    <footer>
-        <hr>
-        <p>© 2025 Synth Magic</p>
-    </footer>
 </body>
-
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>
+        document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
+    </script>
+</footer>
 </html>

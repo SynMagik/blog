@@ -75,12 +75,15 @@ cat <<EOF > "./yappings/$sanitized_name"
         <p></p>
         </article>
     </main>
-    <footer>
-        <br>
-        <br>
-        <p>© 2025 Synth Magic</p>
-    </footer>
+
 </body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>
+        document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
+    </script>
+</footer>
 </html>
 EOF
 
@@ -172,12 +175,15 @@ fi
 cat >> "$OUTPUT_FILE" << EOF
     </ul>
     </main>
-    <footer>
-        <hr>
-        <p>© 2025 Synth Magic</p>
-    </footer>
-</body>
 
+</body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>
+        document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
+    </script>
+</footer>
 </html>
 EOF
 
