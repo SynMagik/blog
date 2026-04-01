@@ -12,8 +12,8 @@
   --color-shadow: #282a2e;
   --color-text: #c5c8c6;
   --color-text-secondary: #969896;
-  --font-family: "IBM Plex Serif", serif, -apple-system;
-  --header-font-family: "IBM Plex Sans Condensed", sans-serif;
+  --font-family: "Ysabeau Office", serif, -apple-system;
+  --header-font-family: "Ysabeau Office", sans-serif;
   --hover-brightness: 1.2;
   --justify-important: center;
   --justify-normal: left;
@@ -22,7 +22,6 @@
   --width-card-medium: 460px;
   --width-card-wide: 800px;
   --width-content: 1080px;
-
   --avatar-url: url("./assets/favicon.png");
 }
 
@@ -235,6 +234,7 @@ pre samp {
 
 small {
   color: var(--color-text-secondary);
+  font-weight: 900;
 }
 
 sup {

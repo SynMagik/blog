@@ -45,6 +45,7 @@ cat <<EOF > "./yappings/$sanitized_name"
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <link rel="icon" href="../assets/favicon.png" type="image/png">
     <link href="../prism.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <meta charset="utf-8">
     <meta name="description" content="My description">

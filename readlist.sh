@@ -17,7 +17,7 @@ cat > "$OUTPUT_FILE" << EOF
 <head>
     <link rel="icon" href="./assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="./style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

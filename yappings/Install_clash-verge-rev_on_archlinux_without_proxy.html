@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" color-mode="user">
+
 <head>
     <script>
         window.MathJax = {
@@ -13,11 +14,14 @@
     <link rel="icon" href="../assets/favicon.png" type="image/png">
     <link href="../prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synth Magic</title>
 </head>
+
 <body class="line-numbers">
     <script src="../prism.js"></script>
     <script>
@@ -39,15 +43,16 @@
         <p>Date: 2026-03-20</p>
         <hr>
         <article>
-        <p>
-            This is based on chaotic-aur. The string join method can be changed (I'm using fish shell so this is the fish script)
+            <p>
+                This is based on chaotic-aur. The string join method can be changed (I'm using fish shell so this is the
+                fish script)
 
-            the Korea mirror can also be used, I guess.
+                the Korea mirror can also be used, I guess.
 
             <pre><code class="language-bash">
                 wget (string join '-' 'https://sg-mirror.chaotic.cx/chaotic-aur/x86_64/clash-verge-rev' (curl -s "https://aur.archlinux.org/rpc/v5/info?arg[]=clash-verge-rev" | jq '.results[0].Version' | sed 's/^.\(.*\).$/\1/' ) 'x86_64.pkg.tar.zst') -O cvr.pkg.tar.zst && sudo pacman -U cvr.pkg.tar.zst
             </code></pre>
-        </p>
+            </p>
         </article>
     </main>
 </body>
@@ -58,4 +63,5 @@
         document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
     </script>
 </footer>
+
 </html>
