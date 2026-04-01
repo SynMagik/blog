@@ -42,9 +42,12 @@
             <h2>YOU HAVE FUCKED UP</h2>
         </article>
     </main>
-    <footer>
-        <hr>
-        <p>© 2025 Synth Magic</p>
-    </footer>
 </body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>
+        document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
+    </script>
+</footer>
 </html>
