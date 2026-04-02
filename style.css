@@ -17,7 +17,7 @@
   --hover-brightness: 1.2;
   --justify-important: center;
   --justify-normal: left;
-  --line-height: 1.5;
+  --line-height: 2.0;
   --width-card: 285px;
   --width-card-medium: 460px;
   --width-card-wide: 800px;
@@ -51,6 +51,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-family);
   line-height: var(--line-height);
+  font-size: large;
   margin: 0;
   overflow-x: hidden;
   padding: 0;

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+
+<head>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../assets/favicon.png" type="image/png">
+    <link href="../prism.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Definition of matrix and common martices</title>
+</head>
+
+<body class="line-numbers">
+    <script src="../prism.js"></script>
+    <script>Prism.plugins.NormalizeWhitespace.setDefaults({ "remove-trailing": true, "remove-indent": true, "left-trim": true, "right-trim": true });</script>
+
+    <header>
+        <nav>
+            <ul><a href="../index.html">Home</a></ul>
+        </nav>
+        <h2>1. Definition of matrix and common martices</h2>
+    </header>
+
+    <main>
+        <p>Date: 2026-04-02</p>
+        <hr>
+        <article>
+            <p>
+            <h3>1. What is Matrix?</h3>
+            a list of number of $m$ rows and $n$ column formed by $m \times n$ number of $a_{ij}$
+            $$
+            \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+            \end{pmatrix}
+            $$
+            is called an $m \times n$ matrix, the numbers are called the element,$a_{ij}$ called the element located on
+            row $i$ column $j$
+
+            if $\mathbf{A}$, $\mathbf{B}$ has same column and row, we call them the same type of matrix.
+
+
+            <h3>2. Types of matrix</h3>
+
+            <ul>
+                <li> Zero Matrix: matrix with all of its element zeroed is called a zero matrix. denote as
+                    $\mathbf{O}_{m \times n}$</li>
+                <li> Square Matrix: when $m=n$, we call the matrix $\left.A_{n\times n}=\left(
+                    \begin{array}
+                    {cccc}{a_{11}} & {a_{12}} & {\cdots} & {a_{1n}} \\
+                    {a_{21}} & {a_{22}} & {\cdots} & {a_{2n}} \\
+                    {\vdots} & {\vdots} & & {\vdots} \\
+                    {a_{n1}} & {a_{n2}} & {\cdots} & {a_{nn}}
+                    \end{array}\right.\right)$ a square matrix of order $n$. Hereby, from $a_{11}$ to $a_{mn}$ is called
+                    the main diagonal of the matrix. $a_{1n}$ to $a_{n1}$ is called the anti-diagonal of matrix.
+                    <br>The sum of the main diagonal of the matrix is called the <strong>trace</strong> of the matrix,
+                    denoted as $\mathrm{tr}(\mathbf{A}) = \sum_{i=1}^n a_{ii}$
+
+                </li>
+                <li>
+                    Upper/Lower Triangular Matrix (Square Matrix): All zeros up/down the main diagonal of the matrix.
+                    $\left(\begin{array}{cccc}{a_{11}}&{0}&{\cdots}&{0}\\
+                    {a_{21}}&{a_{22}}&{\cdots}&{0}\\
+                    {\vdots}&{\vdots}&&{\vdots}\\
+                    {a_{n1}}&{a_{n2}}&{\cdots}&{a_{nn}}\end{array}\right)$ is a lower triangular matrix, while
+                    $\left(\begin{array}{cccc}{a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+                    {0}&{a_{22}}&{\cdots}&{a_{2n}}\\
+                    {\vdots}&{\vdots}&&{\vdots}\\
+                    {0}&{0}&{\cdots}&{a_{nn}}\end{array}\right)$ is an upper triangular matrix
+                </li>
+                <li>
+                    Diagonal Matrix (Square Matrix): the only non-zero element in diagonal matrix is on the diagonal,
+                    this is called the diagonal matrix, denoted by $\Lambda =
+                    \left(\begin{array}{cccc}{a_{11}}&{0}&{\cdots}&{0}\\
+                    {0}&{a_{22}}&{\cdots}&{0}\\
+                    {\vdots}&{\vdots}&&{\vdots}\\
+                    {0}&{0}&{\cdots}&{a_{nn}}\end{array}\right)$ or $\mathrm{diag}(a_{11},a_{22},...,a_{nn})$
+                </li>
+                <li>
+                    Identity Matrix (Diagonal Matrix): A diagonal matrix with all of its non-zero element being 1,
+                    denoted as $I_{n}={\left(\begin{array}{llll}{1}&{0}&{\cdots}&{0}\\
+                    {0}&{1}&{\cdots}&{0}\\
+                    {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+                    {0}&{0}&{\cdots}&{1}\end{array}\right)}$
+                </li>
+                <li>Scalar Matrix (Diagonal Matrix): A diagonal matrix with all of its non-zero element being $k$</li>
+                <li>Symmetrix Matrix (Square Matrix): Matrix that satisfies $a_{ij} = a_{ji}$</li>
+                <li>Skew-symmetric Matrix (Square Matrix): Matrix that satisfies $a_{ij} = -a_{ji}$</li>
+
+            </ul>
+            <h3>3. Row Echelon Form, Reduced Row Echelon Form and Normal Form</h3>
+            Row Echelon form are matrices that looks like
+            $\left(\begin{array}{ccccc}{1}&{a_{0}}&{a_{1}}&{a_{2}}&{a_{3}}\\
+            {0}&{0}&{2}&{a_{4}}&{a_{5}}\\
+            {0}&{0}&{0}&{1}&{a_{6}}\\
+            {0}&{0}&{0}&{0}&{0}\end{array}\right)$, reduced row echelon form are matrices that looks like
+            $\begin{array}{cccc}{\left(\begin{array}{cccc}{1}&{0}&{a_{1}}&{0}&{b_{1}}\\
+            {0}&{1}&{a_{2}}&{0}&{b_{2}}\\
+            {0}&{0}&{0}&{1}&{b_{3}}\end{array}\right)}\end{array}$
+            <br>            
+            <strong>Note:</strong> Column Echelon form and Reduced Column Echelon form do exist and has basically the same definition.
+            <br>
+            A matrix such that it has an identity matrix in the upleft corner and 0 for the rest is called the <strong>normal</strong> form of the matrix, looks like $\left(\begin{array}{ll}{I_{r}}&{0}\\
+{0}&{0}\end{array}\right)$ 
+        </p>
+        </article>
+    </main>
+
+</body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();</script>
+</footer>
+
+</html>
