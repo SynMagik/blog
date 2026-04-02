@@ -59,12 +59,15 @@ done < "$INPUT_FILE"
 # Write HTML footer
 cat >> "$OUTPUT_FILE" << EOF
     </main>
-    <footer>
-        <hr>
-        <p>© 2025 Synth Magic</p>
-    </footer>
-</body>
 
+</body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>
+        document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
+    </script>
+</footer>
 </html>
 EOF
 
