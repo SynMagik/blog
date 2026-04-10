@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
         rel="stylesheet">
     <meta charset="utf-8">
-    <meta name="description" content="Synth Magic's personal website">
+    <meta name="description" content="Synth Magic's personal website & blog ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Synth Magic</title>
@@ -153,7 +153,11 @@
 </body>
 <footer>
     <hr>
-    <p>© <span id="current_year"></span> Synth Magic. </p>
+    <div style="display: grid; grid-template-columns: 1fr max-content;">
+        <div>© <span id="current_year"></span> Synth Magic. </div>
+        <div><a href="https://icp.gov.moe/?keyword=20260505" target="_blank"><img src="https://icp.gov.moe/images/03.svg" width="16" height="16">  萌ICP备20260505号</a></div>
+    </div>
+    
     <script>
         document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
         document.getElementById("days").innerText = Math.trunc(((Date.now() / 1000) - 1764201600) / 86400)
