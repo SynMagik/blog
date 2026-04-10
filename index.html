@@ -156,7 +156,7 @@
     <p>© <span id="current_year"></span> Synth Magic. </p>
     <script>
         document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();
-        document.getElementById("days").innerText = Math.trunc((((new Date()).getTime() / 1000) - 1764201600) / 86400)
+        document.getElementById("days").innerText = Math.trunc(((Date.now() / 1000) - 1764201600) / 86400)
     </script>
 </footer>
 
