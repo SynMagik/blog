@@ -6,7 +6,7 @@
 # ==========================================
 
 
-# ==================== 归档生成函数（按时间倒序排序 + 变量展开修复） ====================
+# ==================== 归档生成函数（按时间倒序排序 + yappings 特殊链接处理） ====================
 generate_archive() {
     local folder="$1"
     local archive_path="$2"
@@ -63,7 +63,7 @@ generate_archive() {
         mv "${list_file}.tmp" "$list_file"
     fi
 
-    # ==================== 生成 archive.html（关键：使用不带单引号的 EOF，让变量展开） ====================
+    # ==================== 生成 archive.html ====================
     cat > "${archive_path}" << EOF
 <!DOCTYPE html>
 <html lang="en" color-mode="user">
@@ -87,8 +87,14 @@ generate_archive() {
     <ul>
 EOF
 
-    # 输出已排序的文章列表
+    # 输出已排序的文章列表 + yappings 特判
     if [ -f "$list_file" ]; then
+        # yappings 特判：链接前缀为 ./yappings/，其他分类保持 ./
+        local link_prefix=""
+        if [ "$folder" = "yappings" ]; then
+            link_prefix="yappings/"
+        fi
+
         tail -n +2 "$list_file" | while IFS= read -r line || [ -n "$line" ]; do
             [ -z "$line" ] && continue
 
@@ -97,7 +103,7 @@ EOF
             local display_title=$(echo "$filename" | sed 's/\.html$//; s/_/ /g')
 
             cat >> "${archive_path}" << EOF
-        <li><a href="./${filename}">${display_title}</a> —— ${date}</li>
+        <li><a href="./${link_prefix}${filename}">${display_title}</a> —— ${date}</li>
 EOF
         done
     else
