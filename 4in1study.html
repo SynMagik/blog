@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+<head>
+    <script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}};</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
+    <link href="./prism.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="4in1study">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4in1study - Synth Magic</title>
+</head>
+<body class="line-numbers">
+    <script src="./prism.js"></script>
+    <script>Prism.plugins.NormalizeWhitespace.setDefaults({"remove-trailing":true,"remove-indent":true,"left-trim":true,"right-trim":true});</script>
+
+    <header>
+        <nav>
+            <ul><a href="./index.html">Home</a></ul>
+        </nav>
+        <h1>My uni-level Mathmematics notes</h1>
+    </header>
+
+    <main>
+        <article>
+            Here are some math self-studying journey recoreded.
+
+            For pure mathematics (Analysis) :  Robotics 201: Calculus for the Modern Engineer
+            For linear algebra: Stanford ENGR108: Introduction to Applied Linear Algebra 
+            
+            <a href="./analysis/archive.html" target="_blank">ROB 201 Notes</a>
+            <a href="./linealg/archive.html" target="_blank">ENGR 108 Notes</a>
+        </article>
+    </main>
+
+</body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();</script>
+</footer>
+</html>

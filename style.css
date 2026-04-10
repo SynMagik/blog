@@ -219,6 +219,16 @@ article p {
     line-height: 200%;
     white-space: pre-line;
 }
+article {
+  white-space: pre-line;
+  font-size: larger;
+}
+article h3 {
+  line-height: 30%;
+}
+article h4 {
+  line-height: 30%;
+}
 /* pre {
   margin: 1rem 0;
   max-width: var(--width-card-wide);

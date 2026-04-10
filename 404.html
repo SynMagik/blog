@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <title>404</title>
+</head>
+<body>
+    <h1 style="text-align: center;">404</h1>
+    <p style="text-align: center; font-size: larger;">
+        It seems like you ended up in nowhere.
+    </p>
+    <p style="text-align: center;">Get you back to index.html in <span id="countdown">5 seconds</span> ...</p>
+</body>
+<script>
+    let secs = 5;
+    setInterval(() => {
+        document.getElementById("countdown").innerText = secs.toString() + (secs < 1 ? " second" : " seconds");
+        secs--;
+        if (secs < 0) {
+            window.location.href = "index.html"
+        } 
+    },1000)
+</script>
+</html>
