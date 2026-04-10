@@ -6,8 +6,7 @@
 # ==========================================
 
 
-# ==================== 归档生成函数（最终修复版） ====================
-# ==================== 归档生成函数（新增自动去重功能） ====================
+# ==================== 归档生成函数（按时间倒序排序 + 变量展开修复） ====================
 generate_archive() {
     local folder="$1"
     local archive_path="$2"
@@ -33,33 +32,38 @@ generate_archive() {
         fi
     fi
 
-    # ==================== 去重处理 ====================
-    # 如果 list.txt 存在，先进行去重（保留最后一次出现的记录）
+    # ==================== 去重 + 按日期倒序排序（已适配 || 分隔符） ====================
     if [ -f "$list_file" ]; then
-        # 保留第一行 TITLE:（如果有），然后对后续行按 filename 去重，保留最后出现的
         {
+            # 保留 TITLE: 行
             head -n 1 "$list_file" | grep "^TITLE:"
-            tail -n +2 "$list_file" 2>/dev/null | awk -F'\\|\\|' '
+            
+            # 数据行：去重 + 按日期倒序
+            tail -n +2 "$list_file" 2>/dev/null | \
+            sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | \
+            awk -F'\\|\\|' '
                 {
-                    key = $1
-                    if (!(key in seen)) {
-                        seen[key] = $0
-                    } else {
-                        seen[key] = $0  # 覆盖，保留最后一次出现的
+                    filename = $1
+                    gsub(/^[[:space:]]+|[[:space:]]+$/, "", filename)
+                    date = $2
+                    gsub(/^[[:space:]]+|[[:space:]]+$/, "", date)
+                    if (filename != "") {
+                        seen[filename] = date
                     }
                 }
                 END {
-                    for (k in seen) {
-                        print seen[k]
+                    for (f in seen) {
+                        print f "||" seen[f]
                     }
                 }
-            ' | sort -t'|' -k1,1  # 可选：按文件名排序，更整洁
+            ' | \
+            sort -t'|' -k3,3r
         } > "${list_file}.tmp"
 
         mv "${list_file}.tmp" "$list_file"
     fi
 
-    # ==================== 生成 archive.html ====================
+    # ==================== 生成 archive.html（关键：使用不带单引号的 EOF，让变量展开） ====================
     cat > "${archive_path}" << EOF
 <!DOCTYPE html>
 <html lang="en" color-mode="user">
@@ -83,13 +87,13 @@ generate_archive() {
     <ul>
 EOF
 
-    # 输出文章列表
+    # 输出已排序的文章列表
     if [ -f "$list_file" ]; then
         tail -n +2 "$list_file" | while IFS= read -r line || [ -n "$line" ]; do
             [ -z "$line" ] && continue
 
-            local filename=$(echo "$line" | awk -F'\\|\\|' '{print $1}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-            local date=$(echo "$line" | awk -F'\\|\\|' '{print $2}' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            local filename=$(echo "$line" | cut -d'|' -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            local date=$(echo "$line" | cut -d'|' -f3 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
             local display_title=$(echo "$filename" | sed 's/\.html$//; s/_/ /g')
 
             cat >> "${archive_path}" << EOF
@@ -117,7 +121,6 @@ EOF
 </html>
 EOF
 }
-
 # ==================== 显示帮助 ====================
 show_help() {
     echo "Synth Magic 新建 & 删除 & 刷新工具"
