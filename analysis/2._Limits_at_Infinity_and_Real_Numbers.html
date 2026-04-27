@@ -44,6 +44,39 @@
             \lim\limits_{x \rightarrow \infty} = \infty
             $$
 
+            <strong>Case where limit does not exist</strong>: for $f(x) = x\sin x$, As $x \rightarrow \infty$, proper value of $\epsilon$ and $L$ cannot be determined for limit as $f(x)$ is constantly oscillating.
+
+            For $\sin x$ it is the same reason that it has no limit.
+            <h3>Limits to Infinity the easy way</h3>
+            Assume $b_m \neq 0$, $a_n \neq 0$ and consider,
+            $$
+                \begin{matrix}
+                y = \frac{b_mx_m + b_{m-1}x_{m-1}+...+b_0}{a_n x^n + a_{n-1}x^{n-1}+...+a_0} = \frac{x^m}{x^n} \times \frac{b_m+b_{m-1}x^{-1}+...+b_0x^{-m}}{a_n+a_{n-1}x^{-1}+...+a_0x^{-n}}\\
+                \mathrm{As}\ x \rightarrow \infty,\ \frac{1}{x^n} \rightarrow 0, \mathrm{Therefore}\\
+                \lim\limits_{x \rightarrow \infty} \frac{b_m+b_{m-1}x^{-1}+...+b_0x^{-m}}{a_n+a_{n-1}x^{-1}+...+a_0x^{-n}} = \frac{b_m}{a_n}\\
+                \mathrm{Thus}\\
+                \lim\limits_{x \rightarrow \infty} y = \begin{cases}0&m < n\\\frac{b_m}{a_n}&m=n\\\mathrm{sgn}(\frac{b_m}{a_n})\cdot \infty&m > n \end{cases}
+                \end{matrix}
+            $$
+            A more complicated example will be: $\lim\limits_{N \rightarrow \infty} \frac{(x+\frac{1}{N})^2-x^2}{\frac{1}{N}} = 2x$
+
+            <h3>Limits are everywhere!</h3>
+            <strong>Real Numbers:</strong> $x \in [0,1], x = 0.d_1d_2d_3d_4... = \lim\limits_{N \rightarrow \infty} \sum\limits^N_{i=1} d_i10^{-i} $
+            <strong>Approximate powers of irrational number:</strong>: Suppose y is an irrational number, $\{r_i\} \in \mathbb{Q}$ and $|y-r_i| \leq 10^{-i}\ (i\geq 1)$, we have
+            $$
+                x^y = \lim\limits_{i \rightarrow \infty} x^{r_i}
+            $$
+            <strong>Natural Exponential & Logarithm: </strong> $\lim\limits_{n \rightarrow \infty} (1+\frac{1}{n})^n = e $
+            <strong>Growth Rate of functions:</strong>
+            $$
+                \ln x < x^a < a^x < x! < x^x
+            $$
+            therefore $\lim\limits_{x -> \infty} \frac{a^x}{x^m} = \infty $ and etc.
+            <h3>Algebra on $\infty$</h3>
+            $x  + (\pm \infty)$ = $\pm \infty$
+            $\infty + \infty = \infty$
+            $\infty - \infty$ is undefined! : indeterminate form
+            
         </article>
     </main>
 

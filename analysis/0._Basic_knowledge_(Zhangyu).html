@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+<head>
+    <script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}};</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../assets/favicon.png" type="image/png">
+    <link href="../prism.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0. Basic knowledge (Zhangyu)</title>
+</head>
+<body class="line-numbers">
+    <script src="../prism.js"></script>
+    <script>Prism.plugins.NormalizeWhitespace.setDefaults({"remove-trailing":true,"remove-indent":true,"left-trim":true,"right-trim":true});</script>
+
+    <header>
+        <nav>
+            <ul><a href="../index.html">Home</a></ul>
+        </nav>
+        <h2>0. Basic knowledge (Zhangyu)</h2>
+    </header>
+
+    <main>
+        <p>Date: 2026-04-18</p>
+        <hr>
+        <article>
+            <h3>Basic logic</h3>
+            Universal Proposition: $\forall (\mathrm{condition})\ \mathrm{statement} $
+            Existensial Proposition: $\exists (\mathrm{condition})\ \mathrm{statement}$
+            
+            Hereby $A^* / A^{'}$ is used for negation of a proposition.
+
+            e.g $A = \forall x, x^2 \geq 0$, $A^* = \exists x, x^2 < 0$
+
+            original preposition false $\rightarrow$ negation proposition true 
+
+            Implicational Proposition: $A \Rightarrow B$ (if A then B), the negation proposition of this is $A B^*$ (A is true and B is false)
+
+            Contrapositive: $B^* \Rightarrow A^*$ (if not B then not A). It is equal to the original proposition.
+
+            for necessary and sufficient condition: $A \Leftrightarrow B$'s contrapositive is $A^* \Leftrightarrow B^*$
+
+            in Implicaitonal Proposition, there exists an inverse proposition such that $A^* \Rightarrow B^*$. <u>However it is worth noting that you cannot infer the status of the inverse proposition by the status of the original proposition</u> Therefore inverse propostion is actually useless.
+
+            Multivariate proposition: propostion that has multiple variable, such as $\forall x, \exists y, ...$
+
+            <h4>How do I use all this???</h4>
+
+            For solving the problem, the procedure can be classified as:
+            <ol>
+                <li>The normal Procedure: Going on by what you have learnt.</li>
+                <li>Reverse Procedure: from the conclusion to infer back to the beginning.</li>
+                <li>Double-ended procedure: Combine 1. and 2.</li>
+                <li>Proof by contradiction: Suppose the original proposition is false, then conjecture the proposition</li>
+                <li>Proof by induction: verify $n=1$, then assume that when $n=k$ or $n>k+1$, proposition is true. Then prove that $n = k+1$ is true</li>
+            </ol>
+
+            Question: proposition P: $\forall x \in \mathbb{R}, f(x + a) < f(x) + f(a)$. 
+            prop. Q1: $f(x)$ is monotonic decreasing and $f(x) > 0$ is always true
+            prop. Q2: $f(x)$ is monotonic increasing and $\exists x_0 < 0, f(x_0) = 0$
+
+            Which of Q1 Q2 is sufficent condition for P ?
+
+            A. Q1
+            B. Q2
+            C. Both
+            D. None
+
+            Answer: For Q1, since $f(x)$ is monotonic decreasing, $f(x + a) < f(x)$. Also since $f(x) > 0$ is always true. $f(x) < f(x) + f(a)$.
+            For Q2: Let $a = x_0, a < 0$. Since $x + a < x$, $f(x+a) < f(x)$. Also $f(a) = 0$, therefore $f(x+a) < f(x) + f(a)$ 
+        
+            Question: Prove that if $x > -1, n \in \mathbb{Z}^+$. $(1+x)^n \geq 1 + nx$ can be made equal if and only if $x = 0$ or $n = 1$
+            
+            Answer: This is equivalent to for $x \in (-1,0) \cup (0,+\infty)$. Prove that $(1+x)^n > 1 + nx$
+            
+        </article>
+    </main>
+
+</body>
+<footer>
+    <hr>
+    <p>© <span id="current_year"></span> Synth Magic</p>
+    <script>document.getElementById("current_year").innerText = (new Date()).getFullYear().toString();</script>
+</footer>
+</html>

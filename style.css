@@ -17,7 +17,7 @@
   --hover-brightness: 1.2;
   --justify-important: center;
   --justify-normal: left;
-  --line-height: 2.0;
+  --line-height: 100%;
   --width-card: 285px;
   --width-card-medium: 460px;
   --width-card-wide: 800px;
@@ -205,10 +205,10 @@ mark {
   padding: 0.1rem;
 }
 
-ol li,
+/* ol li,
 ul li {
   padding: 0.2rem 0;
-}
+} */
 
 p {
   margin: 0.75rem 0;
@@ -221,10 +221,15 @@ article p {
 }
 article {
   white-space: pre-line;
+  line-height: 110%;
   font-size: larger;
 }
 article h3 {
   line-height: 30%;
+}
+article ul,
+article ol {
+  line-height: 100%;
 }
 article h4 {
   line-height: 30%;
