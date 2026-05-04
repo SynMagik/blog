@@ -1,4 +1,5 @@
 TITLE: Archive of my Yappings
+Writing_At_18.html||2026-05-05
 Pursuit_and_self-completeness.html||2026-04-02
 Random_Yap_2026-03-30.html||2026-03-30
 Install_clash-verge-rev_on_archlinux_without_proxy.html||2026-03-20

@@ -75,7 +75,57 @@
             Question: Prove that if $x > -1, n \in \mathbb{Z}^+$. $(1+x)^n \geq 1 + nx$ can be made equal if and only if $x = 0$ or $n = 1$
             
             Answer: This is equivalent to for $x \in (-1,0) \cup (0,+\infty)$. Prove that $(1+x)^n > 1 + nx$
+            By using proof by induction: Verify at $n=2$, $(1+x)^2 = 1 + 2x + x^2 > 1 + 2x$
+            Assume that $(1+x)^k > 1 + kx$ when $x = n$ Prove that $(1+x)^{(k+1)} > 1 + (k+1)x$
             
+            <i>Proof:</i> $(1+x)^{(k+1)} = (1+x)^k(1+x) > (1+x)(1+kx) = 1 + (k+1)x + kx^2 > 1 + (k+1)x. \Box $
+
+            <strong>This leads to Bernoulli Inequality:</strong> $(1+x)^n >= 1 + nx$ for integer $n > 1$ and real number $x \leq -1$
+
+            Question: Prove that $n! < (\frac{n+1}{2})^n$ for $n > 1$ and $n \in \mathbb{Z}^+$
+            
+            Answer: Still By induction, at $n = 2$, the inequality is trivially true.
+
+            Now assume that $k! < (\frac{k+1}{2})^k$, prove that $(k+1)! < (\frac{k+2}{2})^{(k+1)}$
+
+            <i>Proof:</i> $(k+1) \cdot k! < (k+1) \cdot (\frac{k+1}{2})^k = \frac{(k+1)^{k+1}}{2^k} = (\frac{k+2}{2})^{k+1} \cdot (\frac{k+1}{k+2})^{k+1} \cdot 2$
+            
+            $(\frac{k+1}{k+2})^{k+1} \cdot 2 = \frac{1}{(\frac{k+2}{k+1})^{k+1} } \cdot 2 = \frac{1}{(1 + \frac{1}{k+1})^{k+1} } \cdot 2 $
+            
+            By Bernoulli inequality, $(1 + \frac{1}{k+1})^{k+1} \geq 1 + 1$, so $\frac{1}{(1 + \frac{1}{k+1})^{k+1} } \cdot 2 \leq \frac{1}{2} \cdot 2 = 1$
+
+            Since $(\frac{k+1}{k+2})^{k+1} \cdot 2 < 1$. $(k+1) \cdot k! < (k+1) \cdot (\frac{k+1}{2})^k < (\frac{k+2}{2})^{k+1} $. $\Box$
+        
+            <h3>Inequalities</h3>
+
+            If $b > a > 0$, $a \leq |x| < b \Leftrightarrow a \leq x < b\ \mathrm{or}\ -b < x \leq -a$
+
+            Mean inequality: $H \leq G \leq A \leq Q$
+            Where
+            $$
+            \begin{matrix}
+            H\ (\mathrm{Harmonic}) = \frac{n}{\frac1{x_1}+\frac1{x_2}+\cdots+\frac1{x_n}} \\
+            G\ (\mathrm{Geometric}) = \sqrt[n]{x_1x_2\cdots x_n} \\
+            A\ (\mathrm{Arithmetic}) = \frac{x_1+x_2+\cdots+x_n}{n} \\
+            Q\ (\mathrm{Quadratic}) = \sqrt{\frac{x_1^2+x_2^2+\cdots+x_n^2}{n}}
+            \end{matrix}
+            $$            
+
+            Triangle inequality: $||a|-|b|| \leq |a+b| \leq |a|+|b|$
+
+            Cauchy's inequality: $\left(a_{1}^{2}+a_{2}^{2}+\cdots+a_{n}^{2}\right)\!\left(b_{1}^{2}+b_{2}^{2}+\cdots+b_{n}^{2}\right){\geqslant}\left(a_{1}b_{1}+a_{2}b_{2}+\cdots+a_{n}b_{n}\right)^{2}$
+            
+            <strong>Inner meaning of cauchy's inequality:</strong> At $n=2$.  $(a_1^2 + a_2^2)(b_1^2+b_2^2) \geq (a_1b_1 + a_2b_2)^2$
+            Assume vector $\vec{x} = (a_1,a_2)$, $\vec{y} = (b_1,b_2)$. By sqrt both side of $n=2$. We get $\sqrt{a_1^2 + a_2^2} \sqrt{b_1^2+b_2^2} \geq a_1b_1 + a_2b_2$. Which is
+
+
+            $$
+                |\vec{x}| |\vec{y}| \geq \vec{x} \cdot \vec{y}    
+            $$
+
+            What we have learnt in A-level is $\cos \theta = \frac{\vec{x} \cdot \vec{y}}{|\vec{x}||\vec{y}|}$. Rearrange is $|\vec{x}||\vec{y}|\cos\theta =  \vec{x} \cdot \vec{y}  $. Since $\cos\theta \leq 1$. The inequality is trivially true for $n=2$.
+
+            Cauchy's inequality is an $n$-dimension extension of $n=2$
         </article>
     </main>
 
